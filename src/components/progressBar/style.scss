@@ -1,0 +1,23 @@
+.progress-bar {
+  width: 500px;
+  height: 50px;
+  background-color: #e6e6e6;
+  margin-bottom: 10px;
+  position: relative;
+  @media screen and (max-width: 600px) {
+    width: 80%;
+  }
+  &-label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444444;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+  }
+  &-fill {
+    height: 100%;
+    background-color: lightblue;
+    transition: width 0.5s ease-out;
+  }
+}
