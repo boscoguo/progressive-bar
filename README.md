@@ -40,13 +40,31 @@ This application is mainly consist of menu part and login part.
 ### `progressive bar functionality`
 Each bar will work seperately.
 
+https://user-images.githubusercontent.com/20954764/228428311-97d194af-3413-45bc-95c9-ee58cd9df993.mov
+
+
 add value works well and the progressive bar color will change to red when the value is greater than 100 .
+
+https://user-images.githubusercontent.com/20954764/228428377-76d5040d-2fb4-4b8b-bfad-f6adf77b655e.mov
+
 
 minus value works well and the value cannot lower than 0.
 
+
+https://user-images.githubusercontent.com/20954764/228428522-3846f173-fc2d-4ebf-a52f-00103306eeb0.mov
+
+
 clicking consequently works well.
 
+
+https://user-images.githubusercontent.com/20954764/228428565-a396891b-8f78-4ed8-a80c-0a533be46da2.mov
+
+
 progressive bar increase and decrease smoothly.
+
+
+https://user-images.githubusercontent.com/20954764/228428578-604d3570-6aeb-4c73-933e-3440e624f237.mov
+
 
 
 # `npm test`
