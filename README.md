@@ -65,6 +65,9 @@ progressive bar increase and decrease smoothly.
 
 https://user-images.githubusercontent.com/20954764/228428578-604d3570-6aeb-4c73-933e-3440e624f237.mov
 
+reponsive solution.
+
+https://user-images.githubusercontent.com/20954764/228429948-50a4c3e9-5f90-40f3-8e6d-ae90f394eb1d.mov
 
 
 # `npm test`
