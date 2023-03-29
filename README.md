@@ -32,8 +32,8 @@ This application is mainly consist of menu part and login part.
           - [x] Four buttons to increase or decrease the specific credits in a single progressive bar.
      - [x] progressBar component
           - [x] render the specific credit and styles for a single progressive bar.
-- [x] Add unit test for the menu component by using react-testing-library.
-- [x] Add unit test for the login page by using react-testing-library.
+- [x] implement unit test for the progressBarGroup component by using react-testing-library according to TDD test rules.
+- [x] implement unit test for the progressBar component by using react-testing-library according to TDD test rules.
 
 ## Specific Functionality Statement  
 
