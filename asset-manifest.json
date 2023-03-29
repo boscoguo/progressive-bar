@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/progressive-bar/static/css/main.395afbe6.chunk.css",
+    "main.js": "/progressive-bar/static/js/main.fb2b1f4e.chunk.js",
+    "main.js.map": "/progressive-bar/static/js/main.fb2b1f4e.chunk.js.map",
+    "runtime-main.js": "/progressive-bar/static/js/runtime-main.2bae164c.js",
+    "runtime-main.js.map": "/progressive-bar/static/js/runtime-main.2bae164c.js.map",
+    "static/js/2.f3dc92f9.chunk.js": "/progressive-bar/static/js/2.f3dc92f9.chunk.js",
+    "static/js/2.f3dc92f9.chunk.js.map": "/progressive-bar/static/js/2.f3dc92f9.chunk.js.map",
+    "static/js/3.905f2761.chunk.js": "/progressive-bar/static/js/3.905f2761.chunk.js",
+    "static/js/3.905f2761.chunk.js.map": "/progressive-bar/static/js/3.905f2761.chunk.js.map",
+    "index.html": "/progressive-bar/index.html",
+    "static/css/main.395afbe6.chunk.css.map": "/progressive-bar/static/css/main.395afbe6.chunk.css.map",
+    "static/js/2.f3dc92f9.chunk.js.LICENSE.txt": "/progressive-bar/static/js/2.f3dc92f9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2bae164c.js",
+    "static/js/2.f3dc92f9.chunk.js",
+    "static/css/main.395afbe6.chunk.css",
+    "static/js/main.fb2b1f4e.chunk.js"
+  ]
+}
