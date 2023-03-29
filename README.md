@@ -32,27 +32,50 @@ This application is mainly consist of menu part and login part.
           - [x] Four buttons to increase or decrease the specific credits in a single progressive bar.
      - [x] progressBar component
           - [x] render the specific credit and styles for a single progressive bar.
-- [x] Add unit test for the menu component by using react-testing-library.
-- [x] Add unit test for the login page by using react-testing-library.
+- [x] implement unit test for the progressBarGroup component by using react-testing-library according to TDD test rules.
+- [x] implement unit test for the progressBar component by using react-testing-library according to TDD test rules.
 
 ## Specific Functionality Statement  
 
 ### `progressive bar functionality`
 Each bar will work seperately.
 
+https://user-images.githubusercontent.com/20954764/228428311-97d194af-3413-45bc-95c9-ee58cd9df993.mov
+
+
 add value works well and the progressive bar color will change to red when the value is greater than 100 .
+
+https://user-images.githubusercontent.com/20954764/228428377-76d5040d-2fb4-4b8b-bfad-f6adf77b655e.mov
+
 
 minus value works well and the value cannot lower than 0.
 
+
+https://user-images.githubusercontent.com/20954764/228428522-3846f173-fc2d-4ebf-a52f-00103306eeb0.mov
+
+
 clicking consequently works well.
 
+
+https://user-images.githubusercontent.com/20954764/228428565-a396891b-8f78-4ed8-a80c-0a533be46da2.mov
+
+
 progressive bar increase and decrease smoothly.
+
+
+https://user-images.githubusercontent.com/20954764/228428578-604d3570-6aeb-4c73-933e-3440e624f237.mov
+
+reponsive solution.
+
+https://user-images.githubusercontent.com/20954764/228429948-50a4c3e9-5f90-40f3-8e6d-ae90f394eb1d.mov
 
 
 # `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+![Screenshot 2023-03-29 at 4 09 12 pm](https://user-images.githubusercontent.com/20954764/228432551-1cc2b7be-3d2f-4552-9025-70f5c2f71e49.png)
 
 
 ### `npm run build`
