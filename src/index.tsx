@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import { ProgressBarGroup } from "./components/progressBarGroup";
-import "antd/dist/antd.css";
 import "./index.scss";
 
 ReactDOM.render(
