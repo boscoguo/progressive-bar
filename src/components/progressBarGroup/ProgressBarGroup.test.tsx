@@ -10,7 +10,9 @@ describe("<ProgressBarGroup />", () => {
 
   it("should render ProgressBarGroup component", () => {
     const btnElems = screen.getAllByRole("button");
+    const selectElem = screen.getByRole("combobox");
     expect(btnElems.length).toBe(4);
+    expect(selectElem).toBeInTheDocument();
   });
   it("should update progress bar when clicking plus ten button", () => {
     const activeProgressBar = screen.getByTestId("progress-bar-div-0");
@@ -89,5 +91,17 @@ describe("<ProgressBarGroup />", () => {
     const progressBarNumber = screen.getByText(/110%/i);
     expect(progressBarNumber).toBeInTheDocument();
     expect(getComputedStyle(activeProgressBar).backgroundColor).toBe("red");
+  });
+
+  it("should have the correct value when clicking different buttons", () => {
+    const btnElems = screen.getAllByRole("button");
+    userEvent.selectOptions(screen.getByRole("combobox"), ["progressThree"]);
+    userEvent.click(btnElems[3]);
+    userEvent.click(btnElems[2]);
+    userEvent.click(btnElems[1]);
+    const activeProgressBarNumber = screen.getByText(/25%/i);
+    const inActiveProgressBarNumber = screen.getAllByText(/0%/i);
+    expect(activeProgressBarNumber).toBeInTheDocument();
+    expect(inActiveProgressBarNumber.length).toBe(2);
   });
 });
