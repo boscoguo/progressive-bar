@@ -34,6 +34,7 @@ This application is mainly consist of menu part and login part.
           - [x] render the specific credit and styles for a single progressive bar.
 - [x] implement unit test for the progressBarGroup component by using react-testing-library according to TDD test rules.
 - [x] implement unit test for the progressBar component by using react-testing-library according to TDD test rules.
+- [x] implement end to end test for progressBar application with cypress framework.
 
 ## Specific Functionality Statement  
 
