@@ -89,6 +89,10 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `end to end test`
+
+run `npx cypress open` to open the cypress playground and execute the end to end test. 
+
 
 ### 3. `npm run deploy`
 
