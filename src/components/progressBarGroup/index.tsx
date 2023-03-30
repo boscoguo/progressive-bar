@@ -13,48 +13,48 @@ export const ProgressBarGroup = () => {
   const [progressGroup, setProgressGroup] = useState<ProgressGroupType>({
     progressOne: 0,
     progressTwo: 0,
-    progressThree: 0
+    progressThree: 0,
   });
 
   const progressNum = Object.values(progressGroup);
 
   const handleBtnClickPlusTF = () => {
-    setProgressGroup(progressGroup => {
+    setProgressGroup((progressGroup) => {
       return {
         ...progressGroup,
         [selectedBar]:
-          progressGroup[selectedBar as keyof ProgressGroupType] + 25
+          progressGroup[selectedBar as keyof ProgressGroupType] + 25,
       };
     });
   };
 
   const handleBtnClickPlusTen = () => {
-    setProgressGroup(progressGroup => {
+    setProgressGroup((progressGroup) => {
       return {
         ...progressGroup,
         [selectedBar]:
-          progressGroup[selectedBar as keyof ProgressGroupType] + 10
+          progressGroup[selectedBar as keyof ProgressGroupType] + 10,
       };
     });
   };
 
   const handleBtnClickMinusTen = () => {
     if (progressGroup[selectedBar as keyof ProgressGroupType] >= 10) {
-      setProgressGroup(progressGroup => {
+      setProgressGroup((progressGroup) => {
         return {
           ...progressGroup,
           [selectedBar]:
-            progressGroup[selectedBar as keyof ProgressGroupType] - 10
+            progressGroup[selectedBar as keyof ProgressGroupType] - 10,
         };
       });
     } else if (
       progressGroup[selectedBar as keyof ProgressGroupType] > 0 &&
       progressGroup[selectedBar as keyof ProgressGroupType] < 10
     ) {
-      setProgressGroup(progressGroup => {
+      setProgressGroup((progressGroup) => {
         return {
           ...progressGroup,
-          [selectedBar]: 0
+          [selectedBar]: 0,
         };
       });
     }
@@ -62,21 +62,21 @@ export const ProgressBarGroup = () => {
 
   const handleBtnClickMinusTF = () => {
     if (progressGroup[selectedBar as keyof ProgressGroupType] >= 25) {
-      setProgressGroup(progressGroup => {
+      setProgressGroup((progressGroup) => {
         return {
           ...progressGroup,
           [selectedBar]:
-            progressGroup[selectedBar as keyof ProgressGroupType] - 25
+            progressGroup[selectedBar as keyof ProgressGroupType] - 25,
         };
       });
     } else if (
       progressGroup[selectedBar as keyof ProgressGroupType] > 0 &&
       progressGroup[selectedBar as keyof ProgressGroupType] < 25
     ) {
-      setProgressGroup(progressGroup => {
+      setProgressGroup((progressGroup) => {
         return {
           ...progressGroup,
-          [selectedBar]: 0
+          [selectedBar]: 0,
         };
       });
     }
@@ -90,7 +90,7 @@ export const ProgressBarGroup = () => {
       ))}
       <div className="progress-bar-group__btns">
         <select
-          onChange={e => {
+          onChange={(e) => {
             setSelectedBar(e.target.value);
           }}
         >
@@ -100,7 +100,9 @@ export const ProgressBarGroup = () => {
         </select>
         <button onClick={handleBtnClickMinusTF}>-25</button>
         <button onClick={handleBtnClickMinusTen}>-10</button>
-        <button onClick={handleBtnClickPlusTen}>+10</button>
+        <button data-testid="plus-ten" onClick={handleBtnClickPlusTen}>
+          +10
+        </button>
         <button onClick={handleBtnClickPlusTF}>+25</button>
       </div>
     </div>

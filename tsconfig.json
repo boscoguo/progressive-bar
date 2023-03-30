@@ -15,7 +15,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "types": ["cypress", "@testing-library/cypress"]
   },
   "include": ["src"]
 }
