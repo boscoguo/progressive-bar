@@ -18,67 +18,37 @@ export const ProgressBarGroup = () => {
 
   const progressNum = Object.values(progressGroup);
 
-  const handleBtnClickPlusTF = () => {
-    setProgressGroup((progressGroup) => {
-      return {
-        ...progressGroup,
-        [selectedBar]:
-          progressGroup[selectedBar as keyof ProgressGroupType] + 25,
-      };
-    });
-  };
-
-  const handleBtnClickPlusTen = () => {
-    setProgressGroup((progressGroup) => {
-      return {
-        ...progressGroup,
-        [selectedBar]:
-          progressGroup[selectedBar as keyof ProgressGroupType] + 10,
-      };
-    });
-  };
-
-  const handleBtnClickMinusTen = () => {
-    if (progressGroup[selectedBar as keyof ProgressGroupType] >= 10) {
+  const handleBtnClick = (value: string) => {
+    if (value.includes("+")) {
       setProgressGroup((progressGroup) => {
         return {
           ...progressGroup,
           [selectedBar]:
-            progressGroup[selectedBar as keyof ProgressGroupType] - 10,
+            progressGroup[selectedBar as keyof ProgressGroupType] +
+            parseInt(value.replace("+", "")),
         };
       });
-    } else if (
-      progressGroup[selectedBar as keyof ProgressGroupType] > 0 &&
-      progressGroup[selectedBar as keyof ProgressGroupType] < 10
-    ) {
-      setProgressGroup((progressGroup) => {
-        return {
-          ...progressGroup,
-          [selectedBar]: 0,
-        };
-      });
-    }
-  };
-
-  const handleBtnClickMinusTF = () => {
-    if (progressGroup[selectedBar as keyof ProgressGroupType] >= 25) {
-      setProgressGroup((progressGroup) => {
-        return {
-          ...progressGroup,
-          [selectedBar]:
-            progressGroup[selectedBar as keyof ProgressGroupType] - 25,
-        };
-      });
-    } else if (
-      progressGroup[selectedBar as keyof ProgressGroupType] > 0 &&
-      progressGroup[selectedBar as keyof ProgressGroupType] < 25
-    ) {
-      setProgressGroup((progressGroup) => {
-        return {
-          ...progressGroup,
-          [selectedBar]: 0,
-        };
-      });
+    } else {
+      const btnValue = parseInt(value.replace("-", ""));
+      if (progressGroup[selectedBar as keyof ProgressGroupType] >= btnValue) {
+        setProgressGroup((progressGroup) => {
+          return {
+            ...progressGroup,
+            [selectedBar]:
+              progressGroup[selectedBar as keyof ProgressGroupType] - btnValue,
+          };
+        });
+      } else if (
+        progressGroup[selectedBar as keyof ProgressGroupType] > 0 &&
+        progressGroup[selectedBar as keyof ProgressGroupType] < btnValue
+      ) {
+        setProgressGroup((progressGroup) => {
+          return {
+            ...progressGroup,
+            [selectedBar]: 0,
+          };
+        });
+      }
     }
   };
 
@@ -98,12 +68,35 @@ export const ProgressBarGroup = () => {
           <option value="progressTwo">#progress2</option>
           <option value="progressThree">#progress3</option>
         </select>
-        <button onClick={handleBtnClickMinusTF}>-25</button>
-        <button onClick={handleBtnClickMinusTen}>-10</button>
-        <button data-testid="plus-ten" onClick={handleBtnClickPlusTen}>
+        <button
+          onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+            handleBtnClick((e.target as HTMLElement).innerText)
+          }
+        >
+          -25
+        </button>
+        <button
+          onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+            handleBtnClick((e.target as HTMLElement).innerText)
+          }
+        >
+          -10
+        </button>
+        <button
+          data-testid="plus-ten"
+          onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+            handleBtnClick((e.target as HTMLElement).innerText)
+          }
+        >
           +10
         </button>
-        <button onClick={handleBtnClickPlusTF}>+25</button>
+        <button
+          onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+            handleBtnClick((e.target as HTMLElement).innerText)
+          }
+        >
+          +25
+        </button>
       </div>
     </div>
   );
