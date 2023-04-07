@@ -1,5 +1,4 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 import { ProgressBarGroup } from ".";
 
@@ -19,15 +18,17 @@ describe("<ProgressBarGroup />", () => {
     const activeProgressBarTwo = screen.getByTestId("progress-bar-div-1");
     const btnElems = screen.getAllByRole("button");
     const selectedOption = screen.getByRole("option", { name: "#progress2" });
-    userEvent.click(btnElems[2]);
+    fireEvent.click(btnElems[2], { target: { innerText: "+10" } });
     const progressBarNumber = screen.getByText(/10%/i);
     expect(progressBarNumber).toBeInTheDocument();
     expect(getComputedStyle(activeProgressBar).backgroundColor).toBe(
       "lightblue"
     );
-    userEvent.selectOptions(screen.getByRole("combobox"), ["progressTwo"]);
-    expect(selectedOption.selected).toBe(true);
-    userEvent.click(btnElems[2]);
+    fireEvent.change(screen.getByRole("combobox"), {
+      target: { value: "progressTwo" },
+    });
+    expect((selectedOption as HTMLOptionElement).selected).toBe(true);
+    fireEvent.click(btnElems[2], { target: { innerText: "+10" } });
     expect(getComputedStyle(activeProgressBarTwo).backgroundColor).toBe(
       "lightblue"
     );
@@ -38,15 +39,17 @@ describe("<ProgressBarGroup />", () => {
     const activeProgressBarTwo = screen.getByTestId("progress-bar-div-1");
     const btnElems = screen.getAllByRole("button");
     const selectedOption = screen.getByRole("option", { name: "#progress2" });
-    userEvent.click(btnElems[3]);
+    fireEvent.click(btnElems[3], { target: { innerText: "+25" } });
     const progressBarNumber = screen.getByText(/25%/i);
     expect(progressBarNumber).toBeInTheDocument();
     expect(getComputedStyle(activeProgressBar).backgroundColor).toBe(
       "lightblue"
     );
-    userEvent.selectOptions(screen.getByRole("combobox"), ["progressTwo"]);
-    expect(selectedOption.selected).toBe(true);
-    userEvent.click(btnElems[3]);
+    fireEvent.change(screen.getByRole("combobox"), {
+      target: { value: "progressTwo" },
+    });
+    expect((selectedOption as HTMLOptionElement).selected).toBe(true);
+    fireEvent.click(btnElems[3], { target: { innerText: "+25" } });
     expect(getComputedStyle(activeProgressBarTwo).backgroundColor).toBe(
       "lightblue"
     );
@@ -57,13 +60,15 @@ describe("<ProgressBarGroup />", () => {
     const activeProgressBarTwo = screen.getByTestId("progress-bar-div-1");
     const btnElems = screen.getAllByRole("button");
     const selectedOption = screen.getByRole("option", { name: "#progress2" });
-    userEvent.click(btnElems[1]);
+    fireEvent.click(btnElems[1], { target: { innerText: "-10" } });
     const progressBarNumber = screen.getAllByText(/0%/i);
     expect(progressBarNumber[0]).toBeInTheDocument();
     expect(getComputedStyle(activeProgressBar).backgroundColor).toBe("");
-    userEvent.selectOptions(screen.getByRole("combobox"), ["progressTwo"]);
-    expect(selectedOption.selected).toBe(true);
-    userEvent.click(btnElems[1]);
+    fireEvent.change(screen.getByRole("combobox"), {
+      target: { value: "progressTwo" },
+    });
+    expect((selectedOption as HTMLOptionElement).selected).toBe(true);
+    fireEvent.click(btnElems[1], { target: { innerText: "-10" } });
     expect(getComputedStyle(activeProgressBarTwo).backgroundColor).toBe("");
   });
 
@@ -72,13 +77,15 @@ describe("<ProgressBarGroup />", () => {
     const activeProgressBarTwo = screen.getByTestId("progress-bar-div-1");
     const btnElems = screen.getAllByRole("button");
     const selectedOption = screen.getByRole("option", { name: "#progress2" });
-    userEvent.click(btnElems[0]);
+    fireEvent.click(btnElems[0], { target: { innerText: "-25" } });
     const progressBarNumber = screen.getAllByText(/0%/i);
     expect(progressBarNumber[0]).toBeInTheDocument();
     expect(getComputedStyle(activeProgressBar).backgroundColor).toBe("");
-    userEvent.selectOptions(screen.getByRole("combobox"), ["progressTwo"]);
-    expect(selectedOption.selected).toBe(true);
-    userEvent.click(btnElems[0]);
+    fireEvent.change(screen.getByRole("combobox"), {
+      target: { value: "progressTwo" },
+    });
+    expect((selectedOption as HTMLOptionElement).selected).toBe(true);
+    fireEvent.click(btnElems[0], { target: { innerText: "-25" } });
     expect(getComputedStyle(activeProgressBarTwo).backgroundColor).toBe("");
   });
 
@@ -86,7 +93,7 @@ describe("<ProgressBarGroup />", () => {
     const activeProgressBar = screen.getByTestId("progress-bar-div-0");
     const btnElems = screen.getAllByRole("button");
     for (let i = 0; i < 11; i++) {
-      userEvent.click(btnElems[2]);
+      fireEvent.click(btnElems[2], { target: { innerText: "+10" } });
     }
     const progressBarNumber = screen.getByText(/110%/i);
     expect(progressBarNumber).toBeInTheDocument();
@@ -95,10 +102,12 @@ describe("<ProgressBarGroup />", () => {
 
   it("should have the correct value when clicking different buttons", () => {
     const btnElems = screen.getAllByRole("button");
-    userEvent.selectOptions(screen.getByRole("combobox"), ["progressThree"]);
-    userEvent.click(btnElems[3]);
-    userEvent.click(btnElems[2]);
-    userEvent.click(btnElems[1]);
+    fireEvent.change(screen.getByRole("combobox"), {
+      target: { value: "progressThree" },
+    });
+    fireEvent.click(btnElems[3], { target: { innerText: "+25" } });
+    fireEvent.click(btnElems[2], { target: { innerText: "+10" } });
+    fireEvent.click(btnElems[1], { target: { innerText: "-10" } });
     const activeProgressBarNumber = screen.getByText(/25%/i);
     const inActiveProgressBarNumber = screen.getAllByText(/0%/i);
     expect(activeProgressBarNumber).toBeInTheDocument();
