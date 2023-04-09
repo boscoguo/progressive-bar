@@ -13,39 +13,39 @@ export const ProgressBarGroup = () => {
   const [progressGroup, setProgressGroup] = useState<ProgressGroupType>({
     progressOne: 0,
     progressTwo: 0,
-    progressThree: 0,
+    progressThree: 0
   });
 
   const progressNum = Object.values(progressGroup);
 
   const handleBtnClick = (value: string) => {
     if (value.includes("+")) {
-      setProgressGroup((progressGroup) => {
+      setProgressGroup(progressGroup => {
         return {
           ...progressGroup,
           [selectedBar]:
             progressGroup[selectedBar as keyof ProgressGroupType] +
-            parseInt(value.replace("+", "")),
+            parseInt(value.replace("+", ""))
         };
       });
     } else {
       const btnValue = parseInt(value.replace("-", ""));
       if (progressGroup[selectedBar as keyof ProgressGroupType] >= btnValue) {
-        setProgressGroup((progressGroup) => {
+        setProgressGroup(progressGroup => {
           return {
             ...progressGroup,
             [selectedBar]:
-              progressGroup[selectedBar as keyof ProgressGroupType] - btnValue,
+              progressGroup[selectedBar as keyof ProgressGroupType] - btnValue
           };
         });
       } else if (
         progressGroup[selectedBar as keyof ProgressGroupType] > 0 &&
         progressGroup[selectedBar as keyof ProgressGroupType] < btnValue
       ) {
-        setProgressGroup((progressGroup) => {
+        setProgressGroup(progressGroup => {
           return {
             ...progressGroup,
-            [selectedBar]: 0,
+            [selectedBar]: 0
           };
         });
       }
@@ -60,7 +60,7 @@ export const ProgressBarGroup = () => {
       ))}
       <div className="progress-bar-group__btns">
         <select
-          onChange={(e) => {
+          onChange={e => {
             setSelectedBar(e.target.value);
           }}
         >

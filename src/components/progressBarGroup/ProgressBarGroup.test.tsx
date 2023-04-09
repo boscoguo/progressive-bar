@@ -25,7 +25,7 @@ describe("<ProgressBarGroup />", () => {
       "lightblue"
     );
     fireEvent.change(screen.getByRole("combobox"), {
-      target: { value: "progressTwo" },
+      target: { value: "progressTwo" }
     });
     expect((selectedOption as HTMLOptionElement).selected).toBe(true);
     fireEvent.click(btnElems[2], { target: { innerText: "+10" } });
@@ -46,7 +46,7 @@ describe("<ProgressBarGroup />", () => {
       "lightblue"
     );
     fireEvent.change(screen.getByRole("combobox"), {
-      target: { value: "progressTwo" },
+      target: { value: "progressTwo" }
     });
     expect((selectedOption as HTMLOptionElement).selected).toBe(true);
     fireEvent.click(btnElems[3], { target: { innerText: "+25" } });
@@ -65,7 +65,7 @@ describe("<ProgressBarGroup />", () => {
     expect(progressBarNumber[0]).toBeInTheDocument();
     expect(getComputedStyle(activeProgressBar).backgroundColor).toBe("");
     fireEvent.change(screen.getByRole("combobox"), {
-      target: { value: "progressTwo" },
+      target: { value: "progressTwo" }
     });
     expect((selectedOption as HTMLOptionElement).selected).toBe(true);
     fireEvent.click(btnElems[1], { target: { innerText: "-10" } });
@@ -82,7 +82,7 @@ describe("<ProgressBarGroup />", () => {
     expect(progressBarNumber[0]).toBeInTheDocument();
     expect(getComputedStyle(activeProgressBar).backgroundColor).toBe("");
     fireEvent.change(screen.getByRole("combobox"), {
-      target: { value: "progressTwo" },
+      target: { value: "progressTwo" }
     });
     expect((selectedOption as HTMLOptionElement).selected).toBe(true);
     fireEvent.click(btnElems[0], { target: { innerText: "-25" } });
@@ -103,7 +103,7 @@ describe("<ProgressBarGroup />", () => {
   it("should have the correct value when clicking different buttons", () => {
     const btnElems = screen.getAllByRole("button");
     fireEvent.change(screen.getByRole("combobox"), {
-      target: { value: "progressThree" },
+      target: { value: "progressThree" }
     });
     fireEvent.click(btnElems[3], { target: { innerText: "+25" } });
     fireEvent.click(btnElems[2], { target: { innerText: "+10" } });
