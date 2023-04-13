@@ -69,14 +69,14 @@ export const ProgressBarGroup = () => {
           <option value="progressThree">#progress3</option>
         </select>
         <button
-          onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+          onClick={(e) =>
             handleBtnClick((e.target as HTMLElement).innerText)
           }
         >
           -25
         </button>
         <button
-          onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+          onClick={(e) =>
             handleBtnClick((e.target as HTMLElement).innerText)
           }
         >
@@ -84,14 +84,14 @@ export const ProgressBarGroup = () => {
         </button>
         <button
           data-testid="plus-ten"
-          onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+          onClick={(e) =>
             handleBtnClick((e.target as HTMLElement).innerText)
           }
         >
           +10
         </button>
         <button
-          onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+          onClick={(e) =>
             handleBtnClick((e.target as HTMLElement).innerText)
           }
         >
